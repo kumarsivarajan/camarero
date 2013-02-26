@@ -1,0 +1,64 @@
+visoes:
+1. services(catalogo/add/del/edit) - design
+2. assets(add/del/edit) - transition 
+
+
+exemplos:
+
+Service/User:Acesso à Internet
+	Service/Infra: Border Routers
+		CI/Net: GVT1
+			hardware: cisco1800
+		CI/Net: GVT4
+			hardware: cisco1800
+	Service/Infra: Network Core
+		CI/Net: Core1
+			hardware: BlackDiamond8900
+		CI/Net: Core2
+			hardware: BlackDiamond8900
+	Service/Infra: DNS Interno
+		CI/Software: DNS Microsoft 2003
+			host:jade
+			hardware: Dell2950
+		CI/Software: DNS Microsoft 2003
+			host:quartzo
+			hardware: Dell1950
+		CI/Software: DNS Microsoft 2003
+			host:arenito
+			hardware: Dell1950
+	Service/Infra: AD
+		CI/Software: AD Microsoft 2003
+			host:jade
+			hardware: Dell2950
+		CI/Software: AD Microsoft 2003
+			host:quartzo
+			hardware: Dell1950
+		CI/Software: AD Microsoft 2003
+			host:arenito
+			hardware: Dell1950
+	Service/Infra: Firewall Central
+ 		CI/Software: iptables
+			host: cristal
+			hardware: dell2950
+	Service/Infra: WPAD
+		CI/Software: wpad
+			host: cristal
+			hardware: dell2950
+	Service/Infra: Webproxy
+		CI/Software: Ironport Webproxy
+			host: rubi
+			hardware: S360
+	Service/Infra: Balanceadores Internet
+		CI/Net: LP1
+			hardware: Linkproof AS50 
+		CI/Net: LP2
+			hardware: Linkproof AS50 
+
+Service/User: VPN PDCase	
+	Service/Infra: Balanceadores Internet
+		CI/Net: LP1
+			hardware: Linkproof AS50 
+		CI/Net: LP2
+			hardware: Linkproof AS50 
+	CI/Net: GVT4
+		hardware: cisco1800
